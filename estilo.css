@@ -72,14 +72,18 @@ a { color: var(--verde); text-underline-offset: 3px; }
 .topo__sub { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--tinta-suave); }
 
 .menu {
-  display: flex; gap: .4rem; overflow-x: auto; margin: .55rem -1rem 0; padding: 0 1rem .25rem;
+  display: flex; gap: .25rem; overflow-x: auto; margin: .55rem -1rem 0; padding: 0 1rem .25rem;
   scrollbar-width: none;
 }
 .menu::-webkit-scrollbar { display: none; }
 .menu a {
   flex: none; text-decoration: none; color: var(--tinta);
   border: 1px solid var(--linha); border-radius: 999px;
-  padding: .3rem .8rem; font-size: .9rem;
+  padding: .3rem .5rem; font-size: .82rem;
+}
+/* Em telas muito estreitas o menu rola na horizontal; o degradê indica que há mais itens. */
+@media (max-width: 389px) {
+  .menu { -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
 }
 .menu a:hover { background: var(--papel-2); }
 
@@ -140,7 +144,7 @@ main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 3rem; }
 .semana li.tem { background: var(--verde); color: var(--papel); font-weight: 600; }
 .cartao--seletiva .semana li.tem { background: var(--laranja); }
 .semana li.hoje { outline: 2px solid var(--tinta); outline-offset: -2px; }
-.semana .hora { display: block; font-family: var(--fonte-mono); font-size: .68rem; font-weight: 400; }
+.semana .hora { display: block; font-family: var(--fonte-mono); font-size: .72rem; font-weight: 400; }
 
 /* Ecopontos */
 .lista-ecopontos { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }

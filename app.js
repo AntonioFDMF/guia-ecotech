@@ -74,6 +74,7 @@
   }
 
   function descreveFalta(min) {
+    if (min === 0) return "agora";
     if (min < 60) return "em " + min + " min";
     var h = Math.floor(min / 60), d = Math.floor(h / 24);
     if (d >= 1) return "em " + d + (d === 1 ? " dia" : " dias") + " e " + (h % 24) + " h";
@@ -83,6 +84,7 @@
   function descreveDia(h, agora, falta) {
     if (h.dia === agora.dia && falta < 24 * 60) return "Hoje";
     if (h.dia === (agora.dia + 1) % 7 && falta < 48 * 60) return "Amanhã";
+    if (h.dia === agora.dia) return "Próxima " + DIAS[h.dia];
     return DIAS[h.dia].charAt(0).toUpperCase() + DIAS[h.dia].slice(1);
   }
 
