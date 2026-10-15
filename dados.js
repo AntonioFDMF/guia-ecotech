@@ -166,7 +166,7 @@ window.DADOS = {
  */
 window.CONFIG = {
   // Código do site no GoatCounter (ex.: "guia-ecotech" para guia-ecotech.goatcounter.com).
-  goatcounterCodigo: "",
+  goatcounterCodigo: "tonydias",
   // Link do formulário anônimo de comentários (ex.: Google Forms sem coleta de e-mail).
   formularioUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdTrb5zanaogv-DdRoEBDrfEhpVAmGC7g665gBDpMD33brZqA/viewform"
 };
