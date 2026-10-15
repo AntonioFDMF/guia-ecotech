@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guia de Descarte · Praça Fortunato da Silveira</title>
+  <meta name="description" content="Horários de coleta, Ecopontos e como pedir lixeiras pelo SP156 na Praça Fortunato da Silveira (Vila Jacuí, São Paulo). Projeto EcoTech.">
+  <meta name="theme-color" content="#1f5c3f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f5c3f'/%3E%3Cpath d='M10 12h12l-1.2 13H11.2z M9 10h14 M14 10V8h4v2' stroke='%23f4efe4' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__marca">
+      <span class="topo__logo" aria-hidden="true">Eco<b>Tech</b></span>
+      <span class="topo__sub">Guia de Descarte</span>
+    </div>
+    <nav class="menu" aria-label="Seções do guia">
+      <a href="#coleta">Coleta</a>
+      <a href="#ecopontos">Ecopontos</a>
+      <a href="#sp156">SP156</a>
+      <a href="#reciclaveis">Recicláveis</a>
+      <a href="#dicas">Dicas</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="capa" aria-labelledby="titulo-capa">
+      <p class="capa__local" id="capa-local"></p>
+      <h1 id="titulo-capa">Onde e quando descartar seu lixo, tudo em um só lugar.</h1>
+      <div class="agora" id="agora" aria-live="polite">
+        <!-- Preenchido por app.js -->
+      </div>
+    </section>
+
+    <section class="secao" id="coleta" aria-labelledby="titulo-coleta">
+      <h2 id="titulo-coleta"><span class="secao__num">01</span> Horários de coleta</h2>
+      <div class="cartoes-coleta" id="cartoes-coleta"></div>
+      <p class="nota" id="nota-coleta"></p>
+    </section>
+
+    <section class="secao" id="ecopontos" aria-labelledby="titulo-ecopontos">
+      <h2 id="titulo-ecopontos"><span class="secao__num">02</span> Ecopontos próximos</h2>
+      <p class="secao__intro" id="intro-ecopontos"></p>
+      <ul class="lista-ecopontos" id="lista-ecopontos"></ul>
+      <div id="materiais-ecopontos"></div>
+    </section>
+
+    <section class="secao" id="sp156" aria-labelledby="titulo-sp156">
+      <h2 id="titulo-sp156"><span class="secao__num">03</span> Pedir lixeiras e denunciar descarte irregular</h2>
+      <div class="sp156" id="bloco-sp156"></div>
+    </section>
+
+    <section class="secao" id="reciclaveis" aria-labelledby="titulo-reciclaveis">
+      <h2 id="titulo-reciclaveis"><span class="secao__num">04</span> O que é reciclável</h2>
+      <div id="bloco-reciclaveis"></div>
+    </section>
+
+    <section class="secao" id="dicas" aria-labelledby="titulo-dicas">
+      <h2 id="titulo-dicas"><span class="secao__num">05</span> Dicas de descarte</h2>
+      <ol class="dicas" id="lista-dicas"></ol>
+    </section>
+
+    <section class="secao" id="comentarios" aria-labelledby="titulo-comentarios" hidden>
+      <h2 id="titulo-comentarios"><span class="secao__num">06</span> Deixe sua opinião</h2>
+      <p>O formulário é opcional e anônimo: não pedimos nome nem e-mail. Seu comentário ajuda o grupo a avaliar o guia.</p>
+      <a class="botao" id="link-formulario" target="_blank" rel="noopener">Abrir formulário anônimo</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>
+      Projeto do grupo <strong>EcoTech</strong> · Itinerário Extensionista (Economia Sustentável) ·
+      Bacharelado em Ciência da Computação, Universidade Cruzeiro do Sul, Campus São Miguel.
+    </p>
+    <p id="rodape-verificado"></p>
+    <details class="fontes">
+      <summary>Fontes</summary>
+      <ul id="lista-fontes"></ul>
+    </details>
+  </footer>
+
+  <script src="dados.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

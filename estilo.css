@@ -1,0 +1,223 @@
+/* Guia de Descarte EcoTech — estilos
+ * Mobile primeiro; sem dependências externas (carrega rápido em 4G).
+ */
+
+:root {
+  --papel: #f4efe4;
+  --papel-2: #ebe4d4;
+  --tinta: #1d2a22;
+  --tinta-suave: #4f5d54;
+  --verde: #1f5c3f;
+  --verde-claro: #d7e6d8;
+  --laranja: #c4561b;
+  --laranja-claro: #f6dccb;
+  --azul: #1d4e7a;
+  --linha: #cfc6b2;
+  --raio: 14px;
+  --sombra: 0 1px 0 var(--linha);
+  --fonte-titulo: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #141a16;
+    --papel-2: #1c241f;
+    --tinta: #ece7da;
+    --tinta-suave: #a9b3ab;
+    --verde: #7cc39a;
+    --verde-claro: #213b2c;
+    --laranja: #f0935c;
+    --laranja-claro: #3d2618;
+    --azul: #8ab8e6;
+    --linha: #2f3a33;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--verde); text-underline-offset: 3px; }
+
+.pular {
+  position: absolute; left: -999px; top: 0;
+  background: var(--tinta); color: var(--papel); padding: .5rem 1rem; z-index: 10;
+}
+.pular:focus { left: 1rem; }
+
+:focus-visible { outline: 3px solid var(--laranja); outline-offset: 2px; }
+
+/* ---------- Topo ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--papel);
+  border-bottom: 1px solid var(--linha);
+  padding: .75rem 1rem .5rem;
+}
+.topo__marca { display: flex; align-items: baseline; gap: .6rem; }
+.topo__logo { font-family: var(--fonte-titulo); font-size: 1.35rem; letter-spacing: -.01em; }
+.topo__logo b { color: var(--verde); }
+.topo__sub { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--tinta-suave); }
+
+.menu {
+  display: flex; gap: .4rem; overflow-x: auto; margin: .55rem -1rem 0; padding: 0 1rem .25rem;
+  scrollbar-width: none;
+}
+.menu::-webkit-scrollbar { display: none; }
+.menu a {
+  flex: none; text-decoration: none; color: var(--tinta);
+  border: 1px solid var(--linha); border-radius: 999px;
+  padding: .3rem .8rem; font-size: .9rem;
+}
+.menu a:hover { background: var(--papel-2); }
+
+/* ---------- Capa ---------- */
+main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 3rem; }
+
+.capa { padding: 1.75rem 0 1rem; }
+.capa__local {
+  margin: 0 0 .5rem; font-size: .85rem; color: var(--tinta-suave);
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.capa h1 {
+  font-family: var(--fonte-titulo); font-weight: 600;
+  font-size: clamp(1.7rem, 6vw, 2.5rem); line-height: 1.12; letter-spacing: -.015em;
+  margin: 0 0 1.25rem;
+}
+
+.agora {
+  display: grid; gap: .75rem;
+}
+@media (min-width: 560px) { .agora { grid-template-columns: 1fr 1fr; } }
+
+.painel {
+  border-radius: var(--raio); padding: 1rem 1.1rem;
+  border: 1px solid var(--linha); background: var(--papel-2);
+}
+.painel--seletiva { background: var(--verde-claro); border-color: transparent; }
+.painel__rotulo { font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; color: var(--tinta-suave); margin: 0; }
+.painel__quando { font-family: var(--fonte-titulo); font-size: 1.6rem; line-height: 1.15; margin: .2rem 0 .1rem; }
+.painel__falta { margin: 0; font-family: var(--fonte-mono); font-size: .9rem; color: var(--tinta-suave); }
+
+/* ---------- Seções ---------- */
+.secao { padding-top: 2.25rem; }
+.secao h2 {
+  font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.45rem; line-height: 1.2;
+  margin: 0 0 1rem; display: flex; gap: .6rem; align-items: baseline;
+}
+.secao__num { font-family: var(--fonte-mono); font-size: .8rem; color: var(--laranja); font-weight: 600; }
+.secao__intro { margin-top: 0; }
+
+.nota { font-size: .92rem; color: var(--tinta-suave); }
+
+/* Cartões de coleta */
+.cartoes-coleta { display: grid; gap: .75rem; }
+@media (min-width: 560px) { .cartoes-coleta { grid-template-columns: 1fr 1fr; } }
+
+.cartao {
+  border: 1px solid var(--linha); border-radius: var(--raio); padding: 1rem 1.1rem;
+}
+.cartao h3 { margin: 0 0 .15rem; font-size: 1.05rem; }
+.cartao__meta { margin: 0 0 .75rem; font-size: .88rem; color: var(--tinta-suave); }
+
+.semana { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.semana li {
+  text-align: center; border-radius: 8px; padding: .4rem 0 .35rem;
+  background: var(--papel-2); font-size: .78rem; color: var(--tinta-suave);
+}
+.semana li.tem { background: var(--verde); color: var(--papel); font-weight: 600; }
+.cartao--seletiva .semana li.tem { background: var(--laranja); }
+.semana li.hoje { outline: 2px solid var(--tinta); outline-offset: -2px; }
+.semana .hora { display: block; font-family: var(--fonte-mono); font-size: .68rem; font-weight: 400; }
+
+/* Ecopontos */
+.lista-ecopontos { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.ecoponto {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  border: 1px solid var(--linha); border-radius: var(--raio); padding: .85rem 1.1rem;
+}
+.ecoponto h3 { margin: 0; font-size: 1.02rem; }
+.ecoponto p { margin: .1rem 0 0; font-size: .92rem; color: var(--tinta-suave); }
+.selo {
+  display: inline-block; font-size: .78rem; font-weight: 600; padding: .15rem .55rem;
+  border-radius: 999px; margin-top: .4rem;
+}
+.selo--aberto { background: var(--verde-claro); color: var(--verde); }
+.selo--fechado { background: var(--laranja-claro); color: var(--laranja); }
+
+.botao {
+  display: inline-flex; align-items: center; gap: .4rem; flex: none;
+  background: var(--verde); color: var(--papel); text-decoration: none; font-weight: 600;
+  padding: .55rem .95rem; border-radius: 10px; font-size: .95rem;
+}
+.botao:hover { filter: brightness(1.08); }
+.botao--contorno { background: transparent; color: var(--verde); border: 1.5px solid var(--verde); }
+
+/* SP156 */
+.sp156 { display: grid; gap: 1rem; }
+.sp156__ligue {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  background: var(--tinta); color: var(--papel); border-radius: var(--raio); padding: 1.1rem 1.2rem;
+}
+.sp156__ligue .numero { font-family: var(--fonte-titulo); font-size: 2.6rem; line-height: 1; margin: 0; }
+.sp156__ligue p { margin: 0; }
+.sp156__ligue .botao { background: var(--papel); color: var(--tinta); }
+.sp156 ul { margin: 0; padding-left: 1.2rem; }
+.sp156 .multa { border-left: 4px solid var(--laranja); padding-left: .8rem; margin: 0; }
+
+.sp156 h3 { margin: 0; font-size: 1.05rem; }
+.sp156 ol { margin: 0; padding-left: 1.3rem; }
+.sp156 ol li { margin-bottom: .3rem; }
+.sp156 .nota { margin: -.5rem 0 0; }
+.endereco { background: var(--verde-claro); border-radius: var(--raio); padding: .9rem 1.1rem; }
+.endereco__rotulo { margin: 0; font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; color: var(--tinta-suave); }
+.endereco__texto { margin: .25rem 0 .7rem; }
+button.botao { font: inherit; font-weight: 600; font-size: .95rem; cursor: pointer; }
+
+/* Recicláveis e listas de seção */
+#bloco-reciclaveis h3, #materiais-ecopontos h3 { font-size: 1.05rem; margin: 1.1rem 0 .3rem; }
+#bloco-reciclaveis ul, #materiais-ecopontos ul { margin: 0; padding-left: 1.2rem; }
+
+/* Dicas */
+.dicas { list-style: none; margin: 0; padding: 0; counter-reset: dica; display: grid; gap: 1rem; }
+.dicas li { counter-increment: dica; display: grid; grid-template-columns: 2.2rem 1fr; gap: .2rem .75rem; }
+.dicas li::before {
+  content: counter(dica); grid-row: span 3;
+  font-family: var(--fonte-titulo); font-size: 1.6rem; line-height: 1.1; color: var(--laranja);
+}
+.dicas h3 { margin: 0; font-size: 1.02rem; }
+.dicas p { margin: 0; }
+.dicas .fonte { font-size: .8rem; color: var(--tinta-suave); }
+
+/* Avisos */
+.aviso { border-radius: var(--raio); padding: .85rem 1rem; font-size: .93rem; margin-top: 1rem; }
+.aviso--info { background: var(--papel-2); border-left: 4px solid var(--azul); }
+.pendente {
+  border: 2px dashed var(--linha); border-radius: var(--raio); padding: 1rem 1.1rem;
+  color: var(--tinta-suave); font-size: .95rem;
+}
+.pendente strong { color: var(--laranja); }
+
+/* Rodapé */
+.rodape {
+  border-top: 1px solid var(--linha); padding: 1.5rem 1rem 2.5rem;
+  max-width: 46rem; margin: 0 auto; font-size: .88rem; color: var(--tinta-suave);
+}
+.rodape p { margin: 0 0 .6rem; }
+.fontes summary { cursor: pointer; font-weight: 600; color: var(--tinta); }
+.fontes ul { padding-left: 1.1rem; }
+.fontes li { margin-bottom: .45rem; overflow-wrap: anywhere; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
