@@ -81,10 +81,8 @@ a { color: var(--verde); text-underline-offset: 3px; }
   border: 1px solid var(--linha); border-radius: 999px;
   padding: .3rem .5rem; font-size: .82rem;
 }
-/* Em telas muito estreitas o menu rola na horizontal; o degradê indica que há mais itens. */
-@media (max-width: 389px) {
-  .menu { -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
-}
+/* Quando o menu não cabe na tela, o degradê indica que há mais itens (classe aplicada por app.js). */
+.menu--rola { -webkit-mask-image: linear-gradient(to right, #000 82%, transparent); mask-image: linear-gradient(to right, #000 82%, transparent); }
 .menu a:hover { background: var(--papel-2); }
 
 /* ---------- Capa ---------- */

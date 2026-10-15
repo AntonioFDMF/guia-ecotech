@@ -314,6 +314,19 @@
     }
   }
 
+  // Mostra o degradê no menu só quando há itens escondidos à direita.
+  function ajustaMenu() {
+    var m = document.querySelector(".menu");
+    if (!m) return;
+    var atualiza = function () {
+      var escondido = m.scrollWidth - m.clientWidth - m.scrollLeft > 2;
+      m.classList.toggle("menu--rola", escondido);
+    };
+    m.addEventListener("scroll", atualiza, { passive: true });
+    window.addEventListener("resize", atualiza);
+    atualiza();
+  }
+
   /* ---------- Início ---------- */
 
   function atualizaTempo() {
@@ -329,6 +342,7 @@
   montaDicas();
   montaRodape();
   montaExtras();
+  ajustaMenu();
 
   // Atualiza contagens e status "aberto agora" a cada minuto.
   setInterval(atualizaTempo, 60 * 1000);
